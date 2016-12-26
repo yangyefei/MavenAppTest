@@ -36,17 +36,15 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
 <tr><th colspan="4">Default test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="1">test.apptest.HelloWorld</td><td><a href="#m1"><b>f</b>  </a></td><td class="numi">1</td><td>1482300891894</td><td class="numi">0</td></tr>
+<tr class="failedodd"><td rowspan="1">test.apptest.mybatistest</td><td><a href="#m1"><b>usertest</b>  </a></td><td class="numi">1</td><td>1482737907243</td><td class="numi">13</td></tr>
 </table>
 <h1>Default test</h1>
-<h2 id="m1">test.apptest.HelloWorld:f</h2>
+<h2 id="m1">test.apptest.mybatistest:usertest</h2>
 <div style="padding-left:3em">
-<p>expected [true] but found [false]</p>
-org.testng.Assert.fail(Assert.java:94)
-<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
-<br/>at org.testng.Assert.assertTrue(Assert.java:42)
-<br/>at org.testng.Assert.assertTrue(Assert.java:52)
-<br/>at test.apptest.HelloWorld.f(HelloWorld.java:12)
+<p>Could not find resource mybaitsconn.xml</p>
+org.apache.ibatis.io.Resources.getResourceAsStream(Resources.java:104)
+<br/>at org.apache.ibatis.io.Resources.getResourceAsStream(Resources.java:91)
+<br/>at test.apptest.mybatistest.usertest(mybatistest.java:25)
 <br/>25 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
