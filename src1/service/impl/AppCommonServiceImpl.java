@@ -2,13 +2,12 @@ package service.impl;
 
 import java.util.concurrent.TimeUnit;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.TouchAction;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.internal.TouchAction;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.appium.java_client.AppiumDriver;
 import service.AppCommonService;
 
 public class AppCommonServiceImpl implements AppCommonService{
@@ -73,7 +72,8 @@ public class AppCommonServiceImpl implements AppCommonService{
 		Thread.sleep(5000);	
 		int x =driver.manage().window().getSize().width;
 		int y =driver.manage().window().getSize().height;
-		TouchAction  touchAction =new TouchAction(driver);
+	
+		io.appium.java_client.TouchAction touchAction  =new io.appium.java_client.TouchAction(driver);
 		touchAction.press(x/2, y-90).release().perform();
 		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

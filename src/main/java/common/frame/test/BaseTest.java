@@ -14,11 +14,6 @@ public abstract class BaseTest extends AbstractTestNGSpringContextTests{
 	@Autowired
 	public ExcelProviderByTest excelProviderByTest;
 	
-	public Object getBean(String name)
-  {
-	   return this.applicationContext.getBean(name);
-  }
-	
 	
    public Iterator<Object[]> ExcelProviderByEnv(Object aa, String sheetName) {
 	   

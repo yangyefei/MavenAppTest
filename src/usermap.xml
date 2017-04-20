@@ -13,7 +13,12 @@
         根据id查询得到一个user对象
      -->
     <select id="getUser" parameterType="int" 
-        resultType="test.apptest.mybatisusers">
-        select * from users where id=#{id}
+        resultType="test.apptest.BaseTable.special_fund_city">
+        select city_name from special_fund_city where id=#{id}
     </select>
+    
+    
+    <update id="updateUser" parameterType="test.apptest.BaseTable.special_fund_city">
+        update  special_fund_city  set city_name=#{city_name} where id=#{id}
+    </update> 
 </mapper>

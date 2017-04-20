@@ -33,13 +33,8 @@ import service.InitialService;
 public class AppFundWallet extends BaseTest{
 	@Autowired
 	private InitialService Initial;
-	@Autowired
-	private AppCommonService appCommonService;
 
-	private AppiumDriver driver;
-private AndroidDriver mobDriver;
-	private WebDriver webDriver;
-
+AppiumDriver driver;
 	@BeforeClass
 	public void beforeClass() throws Exception {	
 		Runtime.getRuntime().exec("cmd.exe /c start appium");

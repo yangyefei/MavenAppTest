@@ -1,4 +1,4 @@
-package test.apptest;
+package test.apptest.ORM;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,11 +11,14 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import test.apptest.BaseTable.special_fund_city;
+
 
 
 public class mybatistest {
 	@Test
 	public void usertest() throws IOException{
+		
 		 String resource = "mybaitsconn.xml";
 	        //使用类加载器加载mybatis的配置文件（它也加载关联的映射文件）
 //    InputStream is = mybatistest.class.getClassLoader().getResourceAsStream(resource);
@@ -32,10 +35,10 @@ public class mybatistest {
 	         * me.gacl.mapping.userMapper是userMapper.xml文件中mapper标签的namespace属性的值，
 	         * getUser是select标签的id属性值，通过select标签的id属性值就可以找到要执行的SQL
 	         */
-	        String statement = "test.apptest.usermap.getUser";//映射sql的标识字符串
+	        String  statement = "apptest.usermap.getUser";//映射sql的标识字符串
 	        //执行查询返回一个唯一user对象的sql
-	        mybatisusers user = session.selectOne(statement, 1);
-	        System.out.println(user);
+	        special_fund_city user = session.selectOne(statement, 1);
+	       System.out.println(user.getCity_name());
 	    }
 
 }

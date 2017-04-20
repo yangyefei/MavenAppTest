@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import io.appium.java_client.AppiumDriver;
+
+import org.aspectj.lang.annotation.After;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,12 +17,15 @@ import org.openqa.selenium.os.WindowsUtils;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import common.frame.test.BaseTest;
+import io.appium.java_client.AppiumDriver;
 import service.AppCommonService;
 import service.InitialService;
-import common.frame.test.BaseTest;
 
 public class AppFundRequirement extends BaseTest {
 	
@@ -34,7 +38,11 @@ public class AppFundRequirement extends BaseTest {
 
 	@BeforeClass
 	public void beforeClass() {
-      System.out.println("测试");
+    
+	}
+	@AfterClass
+	public void AfterClass() {
+    driver.quit();
 	}
 
 	@Test(enabled = true, dataProvider = "testData", description = "需求响应")
